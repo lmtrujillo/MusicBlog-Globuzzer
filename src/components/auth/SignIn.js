@@ -21,9 +21,9 @@ class SignIn extends Component {
         const { authError, auth } = this.props
         if (auth.uid) return <Redirect to='/' />
         return (
-            <div className="container">
+            <div className="sign in">
                 <form onSubmit={this.handleSubmit} className="mform">
-                    <h5 className="signIn">Sign In</h5>
+                    <h3 className="signIn">Sign In</h3>
                     <div className="input-field">
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" onChange={this.handleChange}/>

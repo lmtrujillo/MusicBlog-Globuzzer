@@ -25,9 +25,9 @@ class CreateProject extends Component {
         const { auth } = this.props;
         if (!auth.uid) return <Redirect to='/signin' />
         return (
-            <div className="container">
+            <div className="sign create-project">
                 <form onSubmit={this.handleSubmit} className="mform">
-                    <h5 className="signIn">Review</h5>
+                    <h2 className="signIn">Review</h2>
                     <div className="input-field">
                         <label htmlFor="title">Title</label>
                         <input type="text" id="title" onChange={this.handleChange}/>
@@ -38,11 +38,11 @@ class CreateProject extends Component {
                     </div>
                     <div className="input-field">
                         <label htmlFor="rating">Rating</label>
-                        <input type="number" id="rating" onChange={this.handleChange}/>
+                        <input type="number" id="rating" min="0" max="10" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
                         <label htmlFor="review">Review</label>
-                        <input type="text" id="review" onChange={this.handleChange}/>
+                        <textarea id="review" onChange={this.handleChange} rows="4" cols="50"></textarea>
                     </div>
                     <div className="input-field">
                         <button className="loginb">Post</button>

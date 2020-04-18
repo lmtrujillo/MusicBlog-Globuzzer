@@ -23,17 +23,9 @@ class SignUp extends Component {
         const { auth, authError } = this.props
         if (auth.uid) return <Redirect to='/' />
         return (
-            <div className="container">
-                <form onSubmit={this.handleSubmit} className="mform">
-                    <h5 className="signIn">Sign Up</h5>
-                    <div className="input-field">
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id="email" onChange={this.handleChange}/>
-                    </div>
-                    <div className="input-field">
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="password" onChange={this.handleChange}/>
-                    </div>
+            <div className="sign up">
+                <form onSubmit={this.handleSubmit} className="su-form">
+                    <h3 className="signIn">Sign Up</h3>
                     <div className="input-field">
                         <label htmlFor="firstName">First Name</label>
                         <input type="text" id="firstName" onChange={this.handleChange}/>
@@ -43,9 +35,18 @@ class SignUp extends Component {
                         <input type="text" id="lastName" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
+                        <label htmlFor="email">Email</label>
+                        <input type="email" id="email" onChange={this.handleChange}/>
+                    </div>
+                    <div className="input-field">
+                        <label htmlFor="password">Password</label>
+                        <input type="password" id="password" onChange={this.handleChange}/>
+                    </div>
+                    <div className="input-field">
                         <button className="loginb">Sign Up</button>
                     </div>
-                    { authError ? <p>{ authError }</p> : null}
+                    
+                    { authError ? <p className="auth-error">{ authError }</p> : null}
                 </form>
 
             </div>
